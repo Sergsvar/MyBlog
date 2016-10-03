@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+{% endblock %}
+
+
+{% block content %}
+    {% for post in posts  %}
+        <a href="/home/{{ post.id }}"><h3>{{ post.head }}</h3></a>
+        <p align="justify">{{ post.shortText }}... <a href="/home/{{ post.id }}">Читать дальше</a> </p>
+        Коментарии: 
+        Теги:
+        {% for i in post.getTags %}
+            <a href="">{{ i }}</a>
+        {% endfor %}
+
+
+    {% endfor %}
+
+{% endblock %}
